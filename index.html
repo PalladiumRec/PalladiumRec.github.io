@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palladium Home & Shop</title>
     
+    <!-- Favicon / Tab Icon -->
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1526687497483059400/1526800300357451786/Untitled246_20260715005906.png?ex=6a585716&is=6a570596&hm=1ad1f69030f3708cffdff25c1c8f832fa9462c7c2559ee828254c34e3e9663ab&">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -61,6 +64,16 @@
         .loader-wrap {
             width: 280px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .loader-logo {
+            height: 64px;
+            width: auto;
+            margin-bottom: 16px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(155, 102, 204, 0.5));
         }
         .loader-title {
             font-size: 22px;
@@ -89,6 +102,7 @@
         .loader-details {
             display: flex;
             justify-content: space-between;
+            width: 100%;
             font-size: 11px;
             color: #d0b3f0;
             text-transform: uppercase;
@@ -509,6 +523,8 @@
 
     <div id="loader">
         <div class="loader-wrap">
+            <!-- Loader Logo Integration -->
+            <img src="https://cdn.discordapp.com/attachments/1526687497483059400/1526800300357451786/Untitled246_20260715005906.png?ex=6a585716&is=6a570596&hm=1ad1f69030f3708cffdff25c1c8f832fa9462c7c2559ee828254c34e3e9663ab&" alt="Palladium Logo" class="loader-logo">
             <div class="loader-title">Palladium.Net</div>
             <div class="loader-bar-bg">
                 <div class="loader-bar-fill" id="p-bar"></div>
@@ -520,6 +536,7 @@
         </div>
     </div>
 
+    <!-- Navigation Bar -->
     <div class="header">
         <a href="#" class="logo">
             <img src="https://cdn.discordapp.com/attachments/1526687497483059400/1526800300357451786/Untitled246_20260715005906.png?ex=6a585716&is=6a570596&hm=1ad1f69030f3708cffdff25c1c8f832fa9462c7c2559ee828254c34e3e9663ab&" alt="Palladium Logo" class="header-logo">
