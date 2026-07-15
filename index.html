@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palladium Home, Shop & Downloads</title>
+    <title>Palladium Home & Shop</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -414,7 +414,6 @@
             box-shadow: none;
         }
 
-        /* --- MODAL DESIGN --- */
         .modal {
             position: fixed;
             inset: 0;
@@ -438,7 +437,7 @@
             border: 1px solid var(--accent-purple);
             border-radius: 20px;
             padding: 40px;
-            max-width: 440px;
+            max-width: 420px;
             width: 90%;
             text-align: center;
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
@@ -477,30 +476,6 @@
         }
         .modal-close-btn:hover {
             background: #8b5cf6;
-        }
-
-        /* Integrated Custom Styling for Download Button Elements */
-        .btn-status-custom {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 12px 20px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--btn-border);
-            border-radius: 50px;
-            cursor: not-allowed;
-            letter-spacing: 0.02em;
-            opacity: 0.7;
-            margin-bottom: 15px;
-        }
-        .footer-note-custom {
-            font-size: 0.85rem;
-            color: rgba(208, 179, 240, 0.5);
-            font-weight: 400;
         }
 
         .post-empty, .post-error {
@@ -634,21 +609,6 @@
         </div>
     </div>
 
-    <div class="modal" id="download-modal">
-        <div class="modal-content" style="border-color: var(--accent-purple);">
-            <div class="modal-icon" style="color: var(--text-muted);"><i class="fa-solid fa-cloud-arrow-down"></i></div>
-            <h2>Downloads</h2>
-            <p style="margin-bottom: 15px;">Welcome to our download area.</p>
-            
-            <div class="btn-status-custom">
-                No File Yet – Coming Soon
-            </div>
-            
-            <p class="footer-note-custom">Game is being worked on; the file is coming soon...</p>
-            <button class="modal-close-btn" id="close-download-modal" style="margin-top:20px;">Return Home</button>
-        </div>
-    </div>
-
     <script type="module">
         const loader = document.getElementById("loader");
         const bar = document.getElementById("p-bar");
@@ -690,16 +650,10 @@
 
         window.addEventListener("DOMContentLoaded", updateLoader);
 
-        // Download Action: Intercept and render dynamic overlay window instead of shifting documents
-        const dlModal = document.getElementById("download-modal");
-        const closeDlModal = document.getElementById("close-download-modal");
-
         document.getElementById("banner-cta").addEventListener('click', () => {
-            dlModal.classList.add("active");
+            window.location.href = 'https://palladiumrec.github.io/';
         });
-        closeDlModal.addEventListener("click", () => dlModal.classList.remove("active"));
 
-        // Store Operations Config
         const modal = document.getElementById("purchase-modal");
         const modalTitle = document.getElementById("modal-title");
         const modalDesc = document.getElementById("modal-desc");
@@ -715,12 +669,7 @@
         });
 
         closeModal.addEventListener("click", () => modal.classList.remove("active"));
-        
-        // Universal Backdrop Dismissals
-        window.addEventListener("click", (e) => { 
-            if(e.target === modal) modal.classList.remove("active"); 
-            if(e.target === dlModal) dlModal.classList.remove("active"); 
-        });
+        modal.addEventListener("click", (e) => { if(e.target === modal) modal.classList.remove("active"); });
 
         const photoList = document.getElementById("photo-list");
 
@@ -771,3 +720,4 @@
     </script>
 </body>
 </html>
+
